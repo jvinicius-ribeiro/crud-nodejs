@@ -2,9 +2,9 @@ const express = require('express');
 
 const server = express();
 
-server.use(express.jsonn());
+server.use(express.json());
 
-const games = ('Call of Duty', 'League of Legends', 'DOTA', 'Valorant', 'Fortnite' );
+const games = ['Call of Duty', 'League of Legends', 'DOTA', 'Valorant', 'Fortnite' ];
 
 
 // retornar um jogo
@@ -24,7 +24,7 @@ server.get('/games', (req, res) => {
 server.post('/games', (req, res) => {
     const { name } = req.body;
 
-    cursos.push(name);
+    games.push(name);
 
     return res.json(games);
 });
